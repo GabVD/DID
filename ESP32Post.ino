@@ -52,7 +52,7 @@ DynamicJsonDocument doc(2048);
   doc["hum"] = dht.readHumidity();
   doc["gas"] =  analogRead(35);
   doc["ruido"] =  analogRead(34)/100;
-  doc["nombre"] =  "ITSRLL";
+  doc["nombre"] =  "DID1";
   //doc["fecha"] = rtc.getDate();
 
 // documento serializado

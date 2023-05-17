@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
   res.send(
-    '<h1>API Express & Firebase MonitoreO2</h1><ul><li><p><b>GET /ver</b></p></li><li><p><b>GET /valor</b></p></li><li><p><b>GET /estado</b></p></li><li><p><b>POST /insertar</b>  => {temp, hum, gas, ruido, nombre, fecha}</p></li><li><p><b>POST /encender</b></p></li><li><p><b>POST /apagar</b></p></li><li><p>/encender</p></li><li><p>/apagar</p></li><li><p>/estado</p></li></ul>')
+    '<h1>DID</h1><ul><li><p><b>GET /ver</b></p></li><li><p><b>GET /valor</b></p></li><li><p><b>GET /estado</b></p></li><li><p><b>POST /insertar</b>  => {Ultra1, Ultra2}</p></li><li><p><b>POST /encender</b></p></li><li><p><b>POST /apagar</b></p></li><li><p>/encender</p></li><li><p>/apagar</p></li><li><p>/estado</p></li></ul>')
 })
 
 app.get('/ver', (req, res) => {
@@ -117,19 +117,14 @@ app.post('/insertar', (req, res)=>{
     });
     
     db.collection('Valores').add({
-     
-      temp: req.body.temp,
-      hum: req.body.hum,
-      gas: req.body.gas,
-      ruido: req.body.ruido,
+      ult1: req.body.ult1,
+      ult2: req.body.ult2,
       nombre: req.body.nombre,
       fecha: new Date().toJSON()
     });
     res.send({
-      temp: req.body.temp,
-      hum: req.body.hum,
-      gas: req.body.gas,
-      ruido: req.body.ruido,
+      ult1: req.body.ult1,
+      ult2: req.body.ult2,
       nombre: req.body.nombre,
       fecha: new Date(),
       status: 'Valores insertados!'
