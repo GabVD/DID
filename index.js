@@ -97,7 +97,7 @@ app.post('/insertar', (req, res)=>{
       timestampsInSnapshots: true
     });
     
-    db.collection('Valores').add({
+    db.collection('/VALORES').add({
       ult1: req.body.ult1,
       ult2: req.body.ult2,
       nombre: req.body.nombre,
@@ -108,7 +108,7 @@ app.post('/insertar', (req, res)=>{
       ult2: req.body.ult2,
       nombre: req.body.nombre,
       fecha: new Date(),
-      status: 'Valores insertados!'
+      status: 'Listo!'
   })
 })
 
